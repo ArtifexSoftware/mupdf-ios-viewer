@@ -265,7 +265,7 @@
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
-			buildWorkingDirectory = ../..;
+			buildWorkingDirectory = libmupdf;
 			dependencies = (
 			);
 			name = Generate;

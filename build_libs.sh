@@ -4,7 +4,7 @@
 # cross compile MuPDF and third party libraries using the regular Makefile.
 # Also see "iOS" section in Makerules.
 
-if [ ! -e ../../generated/gen_cmap_cjk.h ]
+if [ ! -e libmupdf/generated/gen_cmap_cjk.h ]
 then
 	echo 'ERROR: You are missing the generated files.'
 	echo 'ERROR: Please run "make generate" from the mupdf directory.'
@@ -34,11 +34,11 @@ fi
 OUT=build/$build-$OS-$(echo $ARCHS | tr ' ' '-')
 
 echo Compiling libraries for $ARCHS.
-make -j4 -C ../.. OUT=$OUT XCFLAGS="$FLAGS" XLDFLAGS="$FLAGS" third libs || exit 1
+make -j4 -C libmupdf OUT=$OUT XCFLAGS="$FLAGS" XLDFLAGS="$FLAGS" third libs || exit 1
 
 echo Copying library to $BUILT_PRODUCTS_DIR/.
 mkdir -p "$BUILT_PRODUCTS_DIR"
-cp -f ../../$OUT/lib*.a $BUILT_PRODUCTS_DIR
+cp -f libmupdf/$OUT/lib*.a $BUILT_PRODUCTS_DIR
 ranlib $BUILT_PRODUCTS_DIR/lib*.a
 
 echo Done.
