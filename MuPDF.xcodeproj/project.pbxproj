@@ -530,7 +530,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = ../../include;
+				USER_HEADER_SEARCH_PATHS = libmupdf/include;
 			};
 			name = Debug;
 		};
@@ -549,7 +549,7 @@
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				USER_HEADER_SEARCH_PATHS = ../../include;
+				USER_HEADER_SEARCH_PATHS = libmupdf/include;
 			};
 			name = Release;
 		};
