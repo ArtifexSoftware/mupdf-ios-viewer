@@ -25,11 +25,11 @@ To build this project you will need Xcode.
 
 Check out the latest source using git:
 
-	$ git clone git://git.ghostscript.com/apps/mupdf-ios.git
+	$ git clone git://git.ghostscript.com/mupdf-ios-viewer.git
 
 Set up the submodules and prepare the repository for building:
 
-	$ cd mupdf-ios
+	$ cd mupdf-ios-viewer
 	$ bash setup_build.sh
 
 Use Xcode:
