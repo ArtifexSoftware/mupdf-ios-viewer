@@ -38,22 +38,22 @@ NSString *textAsHtml(fz_document *doc, int pageNum)
 
 		buf = fz_new_buffer(ctx, 256);
 		out = fz_new_output_with_buffer(ctx, buf);
-		fz_printf(ctx, out, "<html>\n");
-		fz_printf(ctx, out, "<style>\n");
-		fz_printf(ctx, out, "body{margin:0;}\n");
-		fz_printf(ctx, out, "div.page{background-color:white;}\n");
-		fz_printf(ctx, out, "div.block{margin:0pt;padding:0pt;}\n");
-		fz_printf(ctx, out, "div.metaline{display:table;width:100%%}\n");
-		fz_printf(ctx, out, "div.line{display:table-row;}\n");
-		fz_printf(ctx, out, "div.cell{display:table-cell;padding-left:0.25em;padding-right:0.25em}\n");
-		//fz_printf(ctx, out, "p{margin:0;padding:0;}\n");
-		fz_printf(ctx, out, "</style>\n");
-		fz_printf(ctx, out, "<body style=\"margin:0\"><div style=\"padding:10px\" id=\"content\">");
+		fz_write_printf(ctx, out, "<html>\n");
+		fz_write_printf(ctx, out, "<style>\n");
+		fz_write_printf(ctx, out, "body{margin:0;}\n");
+		fz_write_printf(ctx, out, "div.page{background-color:white;}\n");
+		fz_write_printf(ctx, out, "div.block{margin:0pt;padding:0pt;}\n");
+		fz_write_printf(ctx, out, "div.metaline{display:table;width:100%%}\n");
+		fz_write_printf(ctx, out, "div.line{display:table-row;}\n");
+		fz_write_printf(ctx, out, "div.cell{display:table-cell;padding-left:0.25em;padding-right:0.25em}\n");
+		//fz_write_printf(ctx, out, "p{margin:0;padding:0;}\n");
+		fz_write_printf(ctx, out, "</style>\n");
+		fz_write_printf(ctx, out, "<body style=\"margin:0\"><div style=\"padding:10px\" id=\"content\">");
 		fz_print_stext_page_html(ctx, out, text);
-		fz_printf(ctx, out, "</div></body>\n");
-		fz_printf(ctx, out, "<style>\n");
+		fz_write_printf(ctx, out, "</div></body>\n");
+		fz_write_printf(ctx, out, "<style>\n");
 		fz_print_stext_sheet(ctx, out, sheet);
-		fz_printf(ctx, out, "</style>\n</html>\n");
+		fz_write_printf(ctx, out, "</style>\n</html>\n");
 
 		out = NULL;
 
