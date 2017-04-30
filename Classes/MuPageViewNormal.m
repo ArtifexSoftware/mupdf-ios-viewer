@@ -222,7 +222,7 @@ static void addMarkupAnnot(fz_document *doc, fz_page *page, int type, NSArray *r
 		}
 
 		annot = pdf_create_annot(ctx, (pdf_page *)page, type);
-		pdf_set_annot_quad_points(ctx, annot, rects.count, quadpts);
+		pdf_set_annot_quad_points(ctx, annot, (int)rects.count, quadpts);
 		pdf_set_markup_appearance(ctx, idoc, annot, color, alpha, line_thickness, line_height);
 	}
 	fz_always(ctx)

@@ -272,7 +272,7 @@ static void saveDoc(const char *current_path, fz_document *doc)
 
 	// Set up the buttons on the navigation and search bar
 
-	fz_outline *outlineRoot;
+	fz_outline *outlineRoot = NULL;
 	fz_try(ctx)
 		outlineRoot = fz_load_outline(ctx, doc);
 	fz_catch(ctx)
@@ -475,7 +475,7 @@ static void saveDoc(const char *current_path, fz_document *doc)
 - (void) onShowOutline: (id)sender
 {
 	//  rebuild the outline in case the layout has changed
-	fz_outline *root;
+	fz_outline *root = NULL;
 	fz_try(ctx)
 		root = fz_load_outline(ctx, doc);
 	fz_catch(ctx)
