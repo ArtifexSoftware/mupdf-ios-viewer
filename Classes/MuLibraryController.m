@@ -26,7 +26,9 @@ static void showAlert(NSString *msg, NSString *filename)
 - (void) viewWillAppear: (BOOL)animated
 {
 	[super viewWillAppear:animated];
-	self.title = @"PDF, XPS, CBZ and EPUB Documents";
+	NSString *name = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleDisplayName"];
+	NSString *version = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
+	self.title = [NSString stringWithFormat: @"%@ %@ Documents", name, version];
 	[self reload];
 	timer = [NSTimer timerWithTimeInterval: 3
 		target: self selector: @selector(reload) userInfo: nil
