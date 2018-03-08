@@ -38,7 +38,7 @@ make -j4 -C libmupdf OUT=$OUT XCFLAGS="$FLAGS" XLDFLAGS="$FLAGS" third libs || e
 
 echo Copying library to $BUILT_PRODUCTS_DIR/.
 mkdir -p "$BUILT_PRODUCTS_DIR"
-cp -f libmupdf/$OUT/lib*.a $BUILT_PRODUCTS_DIR
-ranlib $BUILT_PRODUCTS_DIR/lib*.a
+cp -f libmupdf/$OUT/lib*.a "$BUILT_PRODUCTS_DIR"
+ranlib "$BUILT_PRODUCTS_DIR"/lib*.a
 
 echo Done.
